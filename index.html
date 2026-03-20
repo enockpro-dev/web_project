@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Marketplace</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header class="student-hero">
+        <div class="student-top-row">
+            <div class="student-logo">student</div>
+            
+        </div>
+
+        <div class="student-search-wrap">
+            <div class="student-title">What are you looking for?</div>
+            <div class="student-filter-group">
+                <!--<select id="location" aria-label="Select location">-->
+                    <!--<option value="All">All Tanzania</option>
+                    <!-<option value="Dar es Salaam">Dar es Salaam</option>
+                  <!-<option value="Mwanza">Mwanza</option>-->  
+                   <!-- <option value="Arusha">Arusha</option>-->
+                  <!--<option value="Dodoma">Dodoma</option> -->  
+                </select>
+                <div class="student-search-box">
+                    <input id="search" type="text" placeholder="I am looking for..." aria-label="Search products" />
+                    <span class="student-search-icon">🔍</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="student-categories" id="category-row">
+        <a href="#" class="cat-card" data-category="All">All</a>
+        <a href="#" class="cat-card" data-category="Laptop">Laptop</a>
+        <a href="#" class="cat-card" data-category="Stationary">Stationary</a>
+        <a href="#" class="cat-card" data-category="Phones & Tablets">Phones & Tablets</a>
+        <a href="#" class="cat-card" data-category="Accessories">Accessories</a>
+        <a href="#" class="cat-card" data-category="Music">Music</a>
+        <a href="#" class="cat-card" data-category="Home Furniture">Home Furniture</a>
+        <a href="#" class="cat-card" data-category="Books">Books</a>
+    </section>
+
+    <section class="recommended-section">
+        <h2>Recommended for you</h2>
+        <p>Explore the most popular student listings.</p>
+    </section>
+
+    <main class="product-grid" id="product-grid"></main>
+
+    <script src="script.js"></script>
+</body>
+</html>
