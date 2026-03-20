@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - Student Marketplace</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header class="detail-header">
+        <h1 id="product-title">Product Details</h1>
+        <a href="index.html" class="back-link">← Back to Marketplace</a>
+    </header>
+
+    <main class="product-detail">
+        <div class="product-image">
+            <img id="product-image" src="https://via.placeholder.com/400x300" alt="Product" />
+        </div>
+
+        <div class="product-info">
+            <p id="product-description">Select a product from the marketplace to view details.</p>
+            <p id="product-price" class="price">TSH 0</p>
+
+            <div class="seller-contact">
+                <h3>Seller Contact</h3>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a id="seller-email" href="mailto:seller@example.com">seller@example.com</a></p>
+                    <p><strong>Phone:</strong> <a id="seller-phone" href="tel:+255000000000">+255 000 000 000</a></p>
+                </div>
+            </div>
+
+            <button class="contact-btn" onclick="contactSeller()">Contact Seller</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
