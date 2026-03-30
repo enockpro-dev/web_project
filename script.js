@@ -61,7 +61,7 @@ function renderMarketplace(products) {
     if (!grid) return;
 
     if (products.length === 0) {
-        grid.innerHTML = '<div class="no-results">No matching listings found.</div>';
+        grid.innerHTML = '<div class="no-results">No matching listings found  Try again.</div>';
         return;
     }
 
