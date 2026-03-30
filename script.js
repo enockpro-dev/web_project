@@ -53,6 +53,17 @@ const productsData = [
         image: 'https://via.placeholder.com/300x200?text=2-Bedroom+Apartment',
         email: 'seller5@studentmarket.com',
         phone: '+255776655443'
+    },
+     {
+      id: 6,
+        name: 'JBL  Bluetooth earphones',
+        description: 'Good for personal use.',
+        price: 'TSH 20,000',
+        location: 'Dar es Salaam',
+        category: 'Music',
+        image: 'https://via.placeholder.com/300x200?text=Honda+Civic+2015',
+        email: 'seller4@studentmarket.com',
+        phone: '+255998877665'
     }
 ];
 
