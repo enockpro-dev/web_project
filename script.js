@@ -16,7 +16,7 @@ const productsData = [
         description: 'Intel i5, 8GB RAM, 256GB SSD, perfect for students.',
         price: 'TSH 800,000',
         location: 'Mwanza',
-        category: 'Electronics',
+        category: 'Laptop',
         image: 'https://via.placeholder.com/300x200?text=ASUS+VivoBook',
         email: 'seller2@studentmarket.com',
         phone: '+255987654321'
@@ -136,7 +136,7 @@ function filterProducts(category = 'All') {
 
         const matchesCategory =
             category === 'All' ||
-            product.category === category;
+            product.category.toLowerCase() === category.toLowerCase();
 
         return matchesQuery && matchesLocation && matchesCategory;
     });
