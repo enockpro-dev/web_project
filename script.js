@@ -64,6 +64,17 @@ const productsData = [
         image: 'https://via.placeholder.com/300x200?text=Honda+Civic+2015',
         email: 'seller4@studentmarket.com',
         phone: '+255998877665'
+    },
+    {
+      id: 7,
+        name: 'SURVAY photocopy and printing services',
+        description: 'photocopy and printing services.',
+        price: 'TSH 50 @ page',
+        location: 'survay',
+        category: 'Stationary',
+        image: 'https://via.placeholder.com/300x200?text=Honda+Civic+2015',
+        email: 'seller4@studentmarket.com',
+        phone: '+255998877665'
     }
 ];
 
