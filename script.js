@@ -61,7 +61,7 @@ const productsData = [
         price: 'TSH 20,000',
         location: 'Dar es Salaam',
         category: 'Music',
-        image: 'https://via.placeholder.com/300x200?text=Honda+Civic+2015',
+        image: 'https://www.google.com/aclk?sa=L&ai=DChsSEwi38pmXtcqTAxXkaEECHeAmIHsYACICCAEQFRoCd3M&co=1&ase=2&gclid=Cj0KCQjw4a3OBhCHARIsAChaqJMsSqUpqVPGArE-Me_fMQOJ5ryQTmjIeAF0_1nQlIFA8yfPtPi-96EaAqSmEALw_wcB&ei=KOPLaeu2C4Tx7M8PyYKXqA8&cid=CAAS3QHkaO1hHVq-Un4FO9STBs1FW3r8kggp7bhWI1aRaEpEL0cALDuBB263Q-Vlv6zYLccp9-69OX7JGKC95Af_bKjbEr9zmNgU9Lcf7ih0fif1E7hjDQOhzPYjPI6MwbKsYi8iZJewfFQLBHC4Ee8hKT2TTdD7wjzlR8VV6DTMmwSYgbEtMm8v3Z0KjRCFM9kUEjwSg0j6jJbeco3Tl70Ab5vsfZ8FWJEjtUUXY8S-oHBAHLV2MV5BD3tOiSbr8E0_XTB8pl06crPA51nm10PpptmmLN0f4YqmnbWzPbXemA&cce=2&category=acrcp_v1_32&sig=AOD64_3HMlffWQ-rvgI8CBDVKqXv6n69oA&ctype=5&q=&nis=4&sqi=2&ved=2ahUKEwjr6o-XtcqTAxWEOPsDHUnBBfUQwg8oAXoECAwQDA&adurl=',
         email: 'seller4@studentmarket.com',
         phone: '+255998877665'
     },
