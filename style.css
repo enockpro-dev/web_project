@@ -18,7 +18,8 @@ body {
   align-items: center;
   margin-bottom: 1rem;
 }
-.student-logo {
+.student-logo,.student-filter-group select,
+.student-search-box input {
   font-size: 1.5rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -221,7 +222,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .card {
-  background: #fff;
+  background: #10d45b;
   border: 1px solid #dde5f0;
   border-radius: 10px;
   overflow: hidden;
