@@ -63,7 +63,7 @@ const fallbackProductsData = [
         price: 'TSH 20,000',
         location: 'Dar es Salaam',
         category: 'Music',
-        image: 'W.jpeg',
+        image: 'W.jpeg','jbl.jpeg',
         email: 'seller4@studentmarket.com',
         phone: '+255998877665'
     },
