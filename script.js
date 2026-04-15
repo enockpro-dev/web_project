@@ -58,12 +58,12 @@ const fallbackProductsData = [
     },
     {
         id: 6,
-        name: ' Bluetooth earphones',
+        name: 'JBL Bluetooth earphones',
         description: 'Good for personal use.',
         price: 'TSH 20,000',
         location: 'Dar es Salaam',
         category: 'Music',
-        image: 'W.jpeg',
+        images: ['W.jpeg', 'https://via.placeholder.com/300x200?text=JBL+Earphones+2', 'https://via.placeholder.com/300x200?text=JBL+Earphones+3'],
         email: 'seller4@studentmarket.com',
         phone: '+255998877665'
     },
@@ -93,6 +93,48 @@ async function loadProducts() {
     }
 }
 
+function getProductImage(product) {
+    if (Array.isArray(product.images) && product.images.length > 0) {
+        return product.images[0];
+    }
+    return product.image || '';
+}
+
+function renderProductGallery(product) {
+    const mainImage = document.getElementById('product-image');
+    const gallery = document.getElementById('product-image-gallery');
+    const imageSources = Array.isArray(product.images) && product.images.length > 0
+        ? product.images
+        : [product.image || ''];
+
+    if (mainImage && imageSources[0]) {
+        mainImage.src = imageSources[0];
+        mainImage.alt = product.name;
+    }
+
+    if (!gallery) return;
+
+    gallery.innerHTML = imageSources.map((src, index) => `
+        <img
+            class="product-gallery-image${index === 0 ? ' active' : ''}"
+            src="${src}"
+            alt="${product.name} image ${index + 1}"
+            data-src="${src}"
+        />
+    `).join('');
+
+    gallery.querySelectorAll('img').forEach(image => {
+        image.addEventListener('click', () => {
+            if (mainImage) {
+                mainImage.src = image.dataset.src;
+                mainImage.alt = `${product.name} image`;
+            }
+            gallery.querySelectorAll('img').forEach(img => img.classList.remove('active'));
+            image.classList.add('active');
+        });
+    });
+}
+
 function renderMarketplace(products) {
     const grid = document.getElementById('product-grid');
     if (!grid) return;
@@ -104,7 +146,7 @@ function renderMarketplace(products) {
 
     grid.innerHTML = products.map(product => `
         <article class="card" data-id="${product.id}">
-            <img src="${product.image}" alt="${product.name}" />
+            <img src="${getProductImage(product)}" alt="${product.name}" />
             <div class="card-content">
                 <h3>${product.name}</h3>
                 <p>${product.price}</p>
@@ -127,8 +169,7 @@ function fillProductDetails() {
     if (!product) return;
 
     document.getElementById('product-title').textContent = product.name;
-    document.getElementById('product-image').src = product.image;
-    document.getElementById('product-image').alt = product.name;
+    renderProductGallery(product);
     document.getElementById('product-description').textContent = product.description;
     document.getElementById('product-price').textContent = product.price;
     document.getElementById('seller-email').textContent = product.email;
