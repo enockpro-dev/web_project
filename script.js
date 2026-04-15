@@ -58,12 +58,12 @@ const fallbackProductsData = [
     },
     {
         id: 6,
-        name: 'JBL Bluetooth earphones',
+        name: ' Bluetooth earphones',
         description: 'Good for personal use.',
         price: 'TSH 20,000',
         location: 'Dar es Salaam',
         category: 'Music',
-        image: 'W.jpeg','jbl.jpeg',
+        image: 'W.jpeg',
         email: 'seller4@studentmarket.com',
         phone: '+255998877665'
     },
