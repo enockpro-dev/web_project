@@ -94,8 +94,8 @@ function renderMarketplace(products) {
             <div class="card-content">
                 <h3>${product.name}</h3>
                 <p>${product.price}</p>
-                <p class="location">${product.location}</p>
-                <p class="category">${product.category}</p>
+               <p class="location">${product.location}</p>
+              <p class="category">${product.category}</p> 
                 <a class="details-link" href="product.html?id=${product.id}">View details</a>
             </div>
         </article>`).join('');
