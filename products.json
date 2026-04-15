@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy A14",
+    "description": "Used phone in good condition with charger and case.",
+    "price": "TSH 220,000",
+    "location": "Dar es Salaam",
+    "category": "Phones & Tablets",
+    "image": "https://via.placeholder.com/300x200?text=Samsung+Galaxy+A14",
+    "email": "seller1@studentmarket.com",
+    "phone": "+255123456789"
+  },
+  {
+    "id": 2,
+    "name": "Laptop",
+    "description": "Intel i5, 8GB RAM, 256GB SSD, perfect for students.",
+    "price": "TSH 800,000",
+    "location": "Dar",
+    "category": "Laptop",
+    "image": "https://via.placeholder.com/300x200?text=ASUS+VivoBook",
+    "email": "seller2@studentmarket.com",
+    "phone": "+255987654321"
+  },
+  {
+    "id": 3,
+    "name": "Calculus 101 Textbook",
+    "description": "Nearly new, only used one semester.",
+    "price": "TSH 40,000",
+    "location": "Arusha",
+    "category": "Books",
+    "image": "https://via.placeholder.com/300x200?text=Calculus+101+Book",
+    "email": "seller3@studentmarket.com",
+    "phone": "+255112233445"
+  },
+  {
+    "id": 4,
+    "name": "Honda Civic 2015",
+    "description": "Good condition, 150,000km, personal use.",
+    "price": "TSH 5,500,000",
+    "location": "Dar es Salaam",
+    "category": "Vehicles",
+    "image": "https://via.placeholder.com/300x200?text=Honda+Civic+2015",
+    "email": "seller4@studentmarket.com",
+    "phone": "+255998877665"
+  },
+  {
+    "id": 5,
+    "name": "Spacious 2-Bedroom Apartment",
+    "description": "Near university, with balcony and Wi-Fi.",
+    "price": "TSH 1,800,000",
+    "location": "Dodoma",
+    "category": "Property",
+    "image": "https://via.placeholder.com/300x200?text=2-Bedroom+Apartment",
+    "email": "seller5@studentmarket.com",
+    "phone": "+255776655443"
+  },
+  {
+    "id": 6,
+    "name": "JBL Bluetooth earphones",
+    "description": "Good for personal use.",
+    "price": "TSH 20,000",
+    "location": "Dar es Salaam",
+    "category": "Music",
+    "image": "W.jpeg",
+    "email": "seller4@studentmarket.com",
+    "phone": "+255998877665"
+  },
+  {
+    "id": 7,
+    "name": "SURVAY photocopy and printing services",
+    "description": "Photocopy and printing services.",
+    "price": "TSH 50 @ page",
+    "location": "Survay",
+    "category": "Stationary",
+    "image": "https://via.placeholder.com/300x200?text=Printing+Services",
+    "email": "seller4@studentmarket.com",
+    "phone": "+255998877665"
+  }
+]
