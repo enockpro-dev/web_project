@@ -1,4 +1,6 @@
-const productsData = [
+let productsData = [];
+
+const fallbackProductsData = [
     {
         id: 1,
         name: 'Samsung Galaxy A14',
@@ -12,10 +14,10 @@ const productsData = [
     },
     {
         id: 2,
-        name: 'Laptop ',
+        name: 'Laptop',
         description: 'Intel i5, 8GB RAM, 256GB SSD, perfect for students.',
         price: 'TSH 800,000',
-        location: 'dar',
+        location: 'Dar',
         category: 'Laptop',
         image: 'https://via.placeholder.com/300x200?text=ASUS+VivoBook',
         email: 'seller2@studentmarket.com',
@@ -54,30 +56,42 @@ const productsData = [
         email: 'seller5@studentmarket.com',
         phone: '+255776655443'
     },
-     {
-      id: 6,
-        name: 'JBL  Bluetooth earphones',
+    {
+        id: 6,
+        name: 'JBL Bluetooth earphones',
         description: 'Good for personal use.',
         price: 'TSH 20,000',
         location: 'Dar es Salaam',
         category: 'Music',
-        image: 'W.jpegw',
+        image: 'W.jpeg',
         email: 'seller4@studentmarket.com',
         phone: '+255998877665'
     },
-    
     {
-      id: 7,
+        id: 7,
         name: 'SURVAY photocopy and printing services',
-        description: 'photocopy and printing services.',
+        description: 'Photocopy and printing services.',
         price: 'TSH 50 @ page',
-        location: 'survay',
+        location: 'Survay',
         category: 'Stationary',
-        image: 'https://via.placeholder.com/300x200?text=Honda+Civic+2015',
+        image: 'https://via.placeholder.com/300x200?text=Printing+Services',
         email: 'seller4@studentmarket.com',
         phone: '+255998877665'
     }
 ];
+
+async function loadProducts() {
+    try {
+        const response = await fetch('products.json');
+        if (!response.ok) {
+            throw new Error(`Failed to load products: ${response.status}`);
+        }
+        productsData = await response.json();
+    } catch (error) {
+        console.warn('Could not load products.json, using fallback data.', error);
+        productsData = fallbackProductsData;
+    }
+}
 
 function renderMarketplace(products) {
     const grid = document.getElementById('product-grid');
@@ -195,17 +209,19 @@ function getActiveCategory() {
     return (active && active.dataset.category) || 'All';
 }
 
-if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/STUDENT_MARKETPLACE')) {
-    document.addEventListener('DOMContentLoaded', () => {
+async function initializePage() {
+    await loadProducts();
+
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/STUDENT_MARKETPLACE')) {
         renderMarketplace(productsData);
         setupSearch();
-    });
-} else if (window.location.pathname.endsWith('product.html')) {
-    document.addEventListener('DOMContentLoaded', fillProductDetails);
-} else {
-    document.addEventListener('DOMContentLoaded', () => {
+    } else if (window.location.pathname.endsWith('product.html')) {
+        fillProductDetails();
+    } else {
         renderMarketplace(productsData);
         setupSearch();
         fillProductDetails();
-    });
+    }
 }
+
+document.addEventListener('DOMContentLoaded', initializePage);
