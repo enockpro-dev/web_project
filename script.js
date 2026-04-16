@@ -1,3 +1,6 @@
+const API_BASE_URL = 'http://localhost:8000';
+const API_PRODUCTS_ENDPOINT = `${API_BASE_URL}/api/products/`;
+
 let productsData = [];
 
 const fallbackProductsData = [
@@ -80,7 +83,53 @@ const fallbackProductsData = [
     }
 ];
 
+function formatProductPrice(price) {
+    const numericPrice = Number(price);
+    if (Number.isNaN(numericPrice)) {
+        return typeof price === 'string' ? price : 'TSH 0';
+    }
+    return `TSH ${numericPrice.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+}
+
+function transformProductFromApi(product) {
+    const imageUrl = product.image || `https://via.placeholder.com/300x200?text=${encodeURIComponent(product.name)}`;
+    const images = Array.isArray(product.images) && product.images.length > 0
+        ? product.images
+        : [imageUrl];
+
+    return {
+        id: product.id,
+        name: product.name,
+        description: product.description || 'No description available.',
+        price: formatProductPrice(product.price),
+        location: 'Tanzania',
+        category: product.category?.name || 'Other',
+        image: imageUrl,
+        images,
+        email: 'seller@example.com',
+        phone: '+255000000000'
+    };
+}
+
 async function loadProducts() {
+    try {
+        const response = await fetch(API_PRODUCTS_ENDPOINT);
+        if (!response.ok) {
+            throw new Error(`Failed to load products from API: ${response.status}`);
+        }
+        const data = await response.json();
+        const products = Array.isArray(data) ? data : (Array.isArray(data.results) ? data.results : []);
+
+        if (products.length > 0) {
+            productsData = products.map(transformProductFromApi);
+            return;
+        }
+
+        throw new Error('Backend returned no products.');
+    } catch (error) {
+        console.warn('Could not load products from backend API, using local data.', error);
+    }
+
     try {
         const response = await fetch('products.json');
         if (!response.ok) {
